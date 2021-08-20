@@ -19,10 +19,14 @@ def is_prime(n):
 
 counter = 6 # Count how many primes we've found
 prime = 13 # Keep track of the highest prime found so far
+n = prime # Initialize n
 
-while counter < 101:
-  n = prime+2
+while counter < 10001:
+  n += 2 # Try the next odd number (We know that prime is odd, so add 2)
+  #print("Checking " + str(n))
   if is_prime(n):
     counter += 1 # A python shortcut for counter = counter + 1
-    print(n)
+    #print("======= " + str(n) + " IS PRIME =======")
     prime = n # Keep track of this highest prime and keep going
+
+print("The " + str(counter) + "st prime is " + str(prime))
